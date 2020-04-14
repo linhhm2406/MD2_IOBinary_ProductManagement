@@ -1,34 +1,41 @@
 import java.util.Scanner;
 
 public class Main {
+    public static final int SHOW_ALL_PRODUCT = 1;
+    public static final int ADD_MORE_PRODUCT = 2;
+    public static final int FIND_PRODUCT_BY_ID = 3;
+    public static final int DELETE_PRODUCT = 4;
+    public static final int SORT_BY_PRICE = 5;
+    public static final int SORT_BY_NAME = 6;
+
     public static void main(String[] args) {
         ProductManagement pm = new ProductManagement();
         pm.inputProduct();
 
         int userChoice = setMenu();
         switch (userChoice) {
-            case 1: {
+            case SHOW_ALL_PRODUCT: {
                 pm.writeThenReadAllList();
                 break;
             }
-            case 2: {
+            case ADD_MORE_PRODUCT: {
                 pm.addMoreProducts();
                 pm.writeThenReadAllList();
                 break;
             }
-            case 3: {
+            case FIND_PRODUCT_BY_ID: {
                 pm.findByIdThenDisplay();
                 break;
             }
-            case 4: {
+            case DELETE_PRODUCT: {
                 pm.deleteThenDisplay();
                 break;
             }
-            case 5: {
+            case SORT_BY_PRICE: {
                 pm.sortByPrice();
                 pm.writeThenReadAllList();
             }
-            case 6: {
+            case SORT_BY_NAME: {
                 pm.sortByName();
                 pm.writeThenReadAllList();
             }
